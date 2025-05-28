@@ -18,6 +18,15 @@ export class LinkedList {
         }
     }
 
+    prepend(data) {
+        let newNode = new Node();
+        newNode.value = data;
+
+        newNode.nextNode = this.head
+        this.head = newNode;  
+
+    }
+
     tail() {
         if (this.head === null) {
             return null
