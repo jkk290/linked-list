@@ -78,9 +78,25 @@ export class LinkedList {
             return currentPosition.value;
         } else {
             return null;
+        }        
+    }
+
+    pop(){
+        if (this.head === null) {
+            return null;
+        } else if (this.head.nextNode === null) {
+            this.head = null;
         }
 
+        let currentPosition = this.head;
+        let previousPosition = null;
+
+        while (currentPosition.nextNode !== null) {
+            previousPosition = currentPosition;
+            currentPosition = currentPosition.nextNode;
+        }
         
+        previousPosition.nextNode = null;
     }
     
 }
