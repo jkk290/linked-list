@@ -27,20 +27,6 @@ export class LinkedList {
 
     }
 
-    tail() {
-        if (this.head === null) {
-            return null
-        }
-
-        let currentPosition = this.head;
-
-        while (currentPosition.nextNode != null) {
-            currentPosition = currentPosition.nextNode;
-        }
-
-        return currentPosition;
-    }
-
     size() {
         if (this.head === null) {
             return 0;
@@ -55,5 +41,23 @@ export class LinkedList {
         }
 
         return count;
+    }
+
+    head() {
+        return this.head;
+    }
+
+    tail() {
+        if (this.head === null) {
+            return null
+        }
+
+        let currentPosition = this.head;
+
+        while (currentPosition.nextNode != null) {
+            currentPosition = currentPosition.nextNode;
+        }
+
+        return currentPosition;
     }
 }
