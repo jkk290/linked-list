@@ -60,4 +60,27 @@ export class LinkedList {
 
         return currentPosition;
     }
+
+    at(index) {
+        if (this.head === null) {
+            return null
+        }
+
+        let currentPosition = this.head;
+        let count = 0;
+
+        while (count < index && currentPosition.nextNode !== null) {
+            currentPosition = currentPosition.nextNode;
+            count += 1;
+        }
+
+        if (count === index) {
+            return currentPosition.value;
+        } else {
+            return null;
+        }
+
+        
+    }
+    
 }
