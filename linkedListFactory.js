@@ -40,4 +40,20 @@ export class LinkedList {
 
         return currentPosition;
     }
+
+    size() {
+        if (this.head === null) {
+            return 0;
+        }
+
+        let currentPosition = this.head;
+        let count = 1;
+
+        while (currentPosition.nextNode != null) {            
+            currentPosition = currentPosition.nextNode;
+            count += 1;
+        }
+
+        return count;
+    }
 }
