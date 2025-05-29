@@ -1,4 +1,4 @@
-import { Node } from "./nodeFactory";
+import { Node } from "./nodeFactory.js";
 
 export class LinkedList {
     constructor() {
@@ -43,7 +43,7 @@ export class LinkedList {
         return count;
     }
 
-    head() {
+    getHead() {
         return this.head;
     }
 
