@@ -49,7 +49,7 @@ export class LinkedList {
 
     tail() {
         if (this.head === null) {
-            return null
+            return null;
         }
 
         let currentPosition = this.head;
@@ -63,7 +63,7 @@ export class LinkedList {
 
     at(index) {
         if (this.head === null) {
-            return null
+            return null;
         }
 
         let currentPosition = this.head;
@@ -132,6 +132,25 @@ export class LinkedList {
         } else if (currentPosition.value === value) {
             return index;
         }
+
+    }
+
+    toString() {
+        if (this.head === null) {
+            return '';
+        }
+
+        let currentPosition = this.head;
+        let stringList = '';
+
+        while (currentPosition !== null) {
+            stringList = stringList + `( ${currentPosition.value} ) -> `;
+            currentPosition = currentPosition.nextNode;
+        }
+
+        stringList = stringList + `null`;
+
+        return stringList;
 
     }
     
