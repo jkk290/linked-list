@@ -98,5 +98,20 @@ export class LinkedList {
         
         previousPosition.nextNode = null;
     }
+
+    contains(value) {
+        if (this.head === null) {
+            return false;
+        }
+
+        let currentPosition = this.head;
+
+        while (currentPosition !== null && currentPosition.value !== value) {
+            currentPosition = currentPosition.nextNode;
+        }
+
+        return currentPosition !== null;
+
+    }
     
 }
