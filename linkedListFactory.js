@@ -86,6 +86,7 @@ export class LinkedList {
             return null;
         } else if (this.head.nextNode === null) {
             this.head = null;
+            return;
         }
 
         let currentPosition = this.head;
@@ -196,6 +197,32 @@ export class LinkedList {
         } else {
             previousPosition.nextNode = newNode;
         }
+    }
+
+    removeAt(index) {
+        if (this.head === null) {
+            return null;
+        } else if (index === 0) {
+            this.head = this.head.nextNode;
+            return;
+        }
+
+        let currentPosition = this.head;
+        let previousPosition = null;
+        let currentIndex = 0;
+
+        while (currentIndex < index && currentPosition !== null) {
+            previousPosition = currentPosition;
+            currentPosition = currentPosition.nextNode;
+            currentIndex += 1;
+        }
+
+        if (currentIndex === index && currentPosition !== null) {
+            previousPosition.nextNode = currentPosition.nextNode;
+        } else {
+            return null;
+        }
+
     }
     
 }
