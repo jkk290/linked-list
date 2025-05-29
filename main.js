@@ -23,7 +23,7 @@ console.log(list.tail());
 
 console.log(list.at(3));
 
-console.log(list.pop());
+list.pop();
 console.log(list.toString());
 
 console.log(list.contains('parrot'));

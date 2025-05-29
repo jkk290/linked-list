@@ -43,7 +43,7 @@ export class LinkedList {
         return count;
     }
 
-    getHead() {
+    getHead() { // rename method from head() to getHead.  Using .head() method had conflict? issues with this.head property
         return this.head;
     }
 
