@@ -113,5 +113,26 @@ export class LinkedList {
         return currentPosition !== null;
 
     }
+
+    find(value) {
+        if (this.head === null) {
+            return null;
+        }
+
+        let currentPosition = this.head;
+        let index = 0;
+
+        while (currentPosition !== null && currentPosition.value !== value) {
+            currentPosition = currentPosition.nextNode;
+            index += 1;
+        }
+
+        if (currentPosition === null) {
+            return null;
+        } else if (currentPosition.value === value) {
+            return index;
+        }
+
+    }
     
 }
