@@ -67,14 +67,14 @@ export class LinkedList {
         }
 
         let currentPosition = this.head;
-        let count = 0;
+        let currentIndex = 0;
 
-        while (count < index && currentPosition.nextNode !== null) {
+        while (currentIndex < index && currentPosition.nextNode !== null) {
             currentPosition = currentPosition.nextNode;
-            count += 1;
+            currentIndex += 1;
         }
 
-        if (count === index) {
+        if (currentIndex === index) {
             return currentPosition.value;
         } else {
             return null;
@@ -152,6 +152,50 @@ export class LinkedList {
 
         return stringList;
 
+    }
+
+    insertAt(value, index) {
+        if (this.head === null) {
+            if (index === 0) {
+                let newNode = new Node();
+                newNode.value = value;
+                this.head = newNode;
+            return;
+            } else {
+                return null;
+            }
+            
+        } else if (index === 0) {
+            let newNode = new Node();
+            newNode.value = value;
+            newNode.nextNode = this.head;
+            this.head = newNode;
+            return;
+        } 
+
+        let currentPosition = this.head;
+        let currentIndex = 0;
+        let previousPosition = null;        
+
+        while(currentIndex < index && currentPosition !== null) {
+            previousPosition = currentPosition;
+            currentPosition = currentPosition.nextNode;
+            currentIndex += 1;
+        }
+
+        if (currentPosition === null || currentIndex > index) {
+            return null;
+        }
+        
+        let newNode = new Node();
+        newNode.value = value;
+
+        if (currentIndex === index && currentPosition.nextNode !== null) {
+            previousPosition.nextNode = newNode;
+            newNode.nextNode = currentPosition;
+        } else {
+            previousPosition.nextNode = newNode;
+        }
     }
     
 }
